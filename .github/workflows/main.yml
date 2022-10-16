@@ -22,7 +22,7 @@ jobs:
     needs: publish-gpr 
     steps:
 
-    - uses: actions/delete--old-packages-@v3
+    - uses: actions/delete-package-versions@v3
     #- uses: actions/delete-package-versions-keep-latest@v3
       with:
         owner: 'armennag'
