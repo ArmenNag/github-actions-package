@@ -19,10 +19,15 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-  deletePackage:
-    runs-on: ubuntu-latest
-    needs: publish-gpr
-    steps:
+
+
+
+  jobs:
+   deletePackage:
+   runs-on: ubuntu-latest
+   needs: publish-gpr 
+   steps:
+
     - uses: actions/delete--old-packages-@v3
     #- uses: actions/delete-package-versions-keep-latest@v3
       with:
@@ -30,8 +35,10 @@ jobs:
         repo: 'github-actions-package'
         package-name: '1.0.0-alpha'
         token: ${{ secrets.reposecret }}
-        num-old-versions-to-delete: 3
-        min-versions-to-keep: 20
+        #num-old-versions-to-delete: 3
+        #min-versions-to-keep: 20
+        #keep :20
+        keep-latest-package-versions: 20
         delete-only-pre-release-versions: "true"
         ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
     - uses: actions/delete--old-packages-@v3
@@ -42,7 +49,10 @@ jobs:
         package-name: '@armennag/tta@1.0.0-alpha'
         token: ${{ secrets.reposecret }}
         num-old-versions-to-delete: 3
-        min-versions-to-keep: 20
+        #min-versions-to-keep: 20
+        #keep : 20
+        keep-latest-package-versions: 20
         delete-only-pre-release-versions: "true"
         ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
     - run: npm unpublish tta@1.0.0-alpha
+
