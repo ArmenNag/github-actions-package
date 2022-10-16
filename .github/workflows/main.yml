@@ -10,18 +10,15 @@ jobs:
     steps:  
       - uses: actions/setup-node@v2
         with:
-          registry-url: https://npm.pkg.github.com/
-      - run :  npm install @armennag/github-actions-package@3.1.2
+          registry-url: https://npm.pkg.github.com/      
+      - uses: actions/delete-package-versions@v3
+        with:
+          owner: 'ArmenNag'
+          package-name: '@armennag/test-package@2.1.3'
+          num-old-versions-to-delete: 3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
-        with:
-          token: ${{secrets.REPOSECRET}}
-          keep: 5
-          names: |
-                'nowy'
-      
 
     
