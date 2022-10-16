@@ -23,8 +23,8 @@ jobs:
       - uses: actions/delete-package-versions@v3
         with:
           owner: '@armennag'
-          repo: '@github-actions-package'
-          package-name: '@test-package'
+          repo: 'github-actions-package/test-package'
+          package-name: 'test-package'
           token: ${{ secrets.REPOSECRET }}
           min-versions-to-keep: 2
       
