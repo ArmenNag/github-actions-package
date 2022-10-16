@@ -11,7 +11,7 @@ jobs:
       - uses: actions/delete-package-versions@v2
         with:
           owner: 'ArmenNag'
-          package-name: '@armennag/nowy'
+          package-name: 'nowy'
           num-old-versions-to-delete: 3
       
 
