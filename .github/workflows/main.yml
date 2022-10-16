@@ -23,8 +23,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: publish-gpr
     steps:
-    #- uses: actions/delete--old-packages-@v3
-    - uses: actions/delete-package-versions-keep-latest@v3
+    - uses: actions/delete--old-packages-@v3
+    #- uses: actions/delete-package-versions-keep-latest@v3
       with:
         owner: 'armennag'
         repo: 'github-actions-package'
@@ -34,8 +34,8 @@ jobs:
         min-versions-to-keep: 20
         delete-only-pre-release-versions: "true"
         ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
-    #- uses: actions/delete--old-packages-@v3
-    - uses: actions/delete-package-versions-keep-latest@v3
+    - uses: actions/delete--old-packages-@v3
+    #- uses: actions/delete-package-versions-keep-latest@v3
       with:
         owner: 'armennag'
         repo: 'github-actions-package'
