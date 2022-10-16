@@ -8,7 +8,7 @@ jobs:
   deletepgk:
     runs-on: ubuntu-latest
     steps:  
-      - run :  npm install '@armennag/nowy@1.0.0'
+      - run :  npm install @armennag/github-actions-package@3.1.2
       - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
         with:
           token: ${{secrets.REPOSECRET}}
