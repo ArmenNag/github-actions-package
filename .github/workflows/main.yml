@@ -8,8 +8,9 @@ jobs:
   deletepgk:
     runs-on: ubuntu-latest
     steps:  
-      - run : |
-               npm login --scope=@armennag --registry=https://npm.pkg.github.com
+      - uses: actions/setup-node@v2
+        with:
+          registry-url: https://npm.pkg.github.com/
       - run :  npm install @armennag/github-actions-package@3.1.2
       - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
         with:
