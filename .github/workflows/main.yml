@@ -9,7 +9,7 @@ jobs:
     steps:  
       - uses: actions/delete-package-versions@v3
         with:
-          owner: 'ArmenNaga'
+          owner: '@ArmenNaga'
           repo: 'github-actions-package'
           package-name: '@armennag/test-package'
           token: ${{ secrets.REPOSECRET }}
