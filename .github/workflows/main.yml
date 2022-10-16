@@ -23,7 +23,7 @@ jobs:
       - uses: actions/delete-package-versions@v3
         with:
           owner: '@armennag'
-          package-name: '@test-package'
+          repo: '@test-package'
           min-versions-to-keep: 2
       
 
