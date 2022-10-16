@@ -12,6 +12,10 @@ jobs:
         with:
           registry-url: https://npm.pkg.github.com/
       - run :  npm install @armennag/github-actions-package@3.1.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
         with:
           token: ${{secrets.REPOSECRET}}
