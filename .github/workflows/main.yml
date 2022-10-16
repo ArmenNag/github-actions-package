@@ -15,7 +15,7 @@ jobs:
       - uses: actions/delete-package-versions@v3
         with:
           owner: 'ArmenNag'
-          package-name: '@armennag/test-package@2.1.3'
+          package-name: 'test-package'
           num-old-versions-to-delete: 3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
