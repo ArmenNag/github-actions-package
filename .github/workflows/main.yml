@@ -10,7 +10,8 @@ jobs:
     steps:  
       - uses: actions/setup-node@v2
         with:
-          registry-url: https://npm.pkg.github.com/      
+          registry-url: https://npm.pkg.github.com/
+      - run : echo /home/runner/work/_temp/.npmrc
       - uses: actions/delete-package-versions@v3
         with:
           owner: 'ArmenNag'
