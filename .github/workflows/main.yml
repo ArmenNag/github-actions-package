@@ -19,18 +19,11 @@ jobs:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
   deletepgk:
     runs-on: ubuntu-latest
-    needs: publish-gpr 
-    steps:
-
-    - uses: actions/delete-package-versions@v3
-      with:
-        owner: 'armennag'
-        repo: 'github-actions-package'
-        package-name: '1.0.0-alpha'
-        token: ${{ secrets.reposecret }}
-        keep-latest-package-versions: 20
-        delete-only-pre-release-versions: "false"
-        ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
+    steps:  
+      - uses: actions/delete-package-versions@v3
+        with:
+          package-name: 'test-package'
+          min-versions-to-keep: 2
       
 
     
