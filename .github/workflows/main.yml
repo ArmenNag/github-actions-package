@@ -9,6 +9,7 @@ jobs:
     steps:  
       - uses: actions/delete-package-versions@v3
         with:
+          owner: 'ArmenNaga'
           package-name: '@armennag/test-package'
           token: ${{ secrets.REPOSECRET }}
           min-versions-to-keep: 2
