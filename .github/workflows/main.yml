@@ -9,11 +9,8 @@ jobs:
     steps:  
       - uses: actions/delete-package-versions@v3
         with:
-          owner: '@ArmenNaga'
-          repo: 'github-actions-package'
-          package-name: '@armennag/test-package'
-          token: ${{ secrets.REPOSECRET }}
-          min-versions-to-keep: 2
+          package-name: 'test-package'
+          num-old-versions-to-delete: 3
       
 
     
