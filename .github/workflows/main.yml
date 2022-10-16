@@ -19,15 +19,12 @@ jobs:
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-
   jobs:
-   deletePackage:
+   #remove-package-version:
+   name: remove-packages
    runs-on: ubuntu-latest
    needs: publish-gpr 
    steps:
-
     - uses: actions/delete--old-packages-@v3
     #- uses: actions/delete-package-versions-keep-latest@v3
       with:
@@ -55,4 +52,3 @@ jobs:
         delete-only-pre-release-versions: "true"
         ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
     - run: npm unpublish tta@1.0.0-alpha
-
