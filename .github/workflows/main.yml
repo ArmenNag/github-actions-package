@@ -9,7 +9,7 @@ jobs:
     steps:  
       - uses: actions/delete-package-versions@v3
         with:
-          package-name: 'test-package'
+          package-name: 'armennag/test-package'
           num-old-versions-to-delete: 3
       
 
