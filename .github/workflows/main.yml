@@ -23,7 +23,6 @@ jobs:
     steps:
 
     - uses: actions/delete-package-versions@v3
-    #- uses: actions/delete-package-versions-keep-latest@v3
       with:
         owner: 'armennag'
         repo: 'github-actions-package'
