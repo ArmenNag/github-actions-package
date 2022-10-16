@@ -21,7 +21,7 @@ jobs:
           token: ${{secrets.REPOSECRET}}
           keep: 5
           names: |
-                'https://npm.pkg.github.com/@ArmenNag/nowy'
+                'nowy'
       
 
     
