@@ -12,7 +12,7 @@ jobs:
         with:
           keep: 5
           names: |
-                '@armennag/nowy@1.0.0'
+                'https://npm.pkg.github.com/@ArmenNag/nowy'
       
 
     
