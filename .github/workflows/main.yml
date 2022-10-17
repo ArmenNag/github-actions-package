@@ -17,6 +17,7 @@ jobs:
           owner: 'ArmenNag'
           package-name: 'test-package'
           num-old-versions-to-delete: 3
+          token: ${{ secrets.REPOSECRET }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
