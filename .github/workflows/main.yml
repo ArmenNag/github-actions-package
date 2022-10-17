@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           registry-url: https://npm.pkg.github.com/
-      - run :  npm install @armennag/github-actions-package@3.1.2
+      - run :  npm install @armennag/github-actions-package@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
