@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - main
-    schedule:
-      - cron:  '0 8 * * *'
+   
 jobs:
   publish-gpr:
     runs-on: ubuntu-latest
@@ -26,7 +25,7 @@ jobs:
     steps:
     #- uses: actions/delete--old-packages-@v3
     #- uses: actions/delete-package-versions-keep-latest@v3
-      uses: SmartsquareGmbH/delete-old-packages@v0.5.0
+    - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
       with:
         owner: 'armennag'
         repo: 'github-actions-package'
@@ -38,8 +37,8 @@ jobs:
         ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
     #- uses: actions/delete--old-packages-@v3
     #- uses: actions/delete-package-versions-keep-latest@v3
-        uses: SmartsquareGmbH/delete-old-packages@v0.5.0
-        with:
+    - uses: SmartsquareGmbH/delete-old-packages@v0.5.0
+      with:
             owner: 'armennag'
             repo: 'github-actions-package'
             package-name: '@armennag/tta@1.0.0-alpha'
@@ -48,4 +47,4 @@ jobs:
             min-versions-to-keep: 20
             delete-only-pre-release-versions: "true"
             ignore-versions: '^(0|[1-9]\\d*)\\.0\\.0$'
-        run: npm unpublish tta@1.0.0-alpha
+    - run: npm unpublish tta@1.0.0-alpha
